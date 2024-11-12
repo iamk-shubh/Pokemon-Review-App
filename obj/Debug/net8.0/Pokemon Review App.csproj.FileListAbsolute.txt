@@ -142,3 +142,4 @@ E:\DotNet Visual studio\Pokemon Review App\Pokemon Review App\obj\Debug\net8.0\P
 E:\DotNet Visual studio\Pokemon Review App\Pokemon Review App\obj\Debug\net8.0\ref\Pokemon Review App.dll
 E:\DotNet Visual studio\Pokemon Review App\Pokemon Review App\bin\Debug\net8.0\AutoMapper.dll
 E:\DotNet Visual studio\Pokemon Review App\Pokemon Review App\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\DotNet Visual studio\Pokemon Review App\Pokemon Review App\obj\Debug\net8.0\Pokemon Review App.sourcelink.json

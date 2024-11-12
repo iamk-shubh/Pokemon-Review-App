@@ -3,6 +3,8 @@ using Pokemon_Review_App.Data;
 using Pokemon_Review_App.Interfaces;
 using Pokemon_Review_App.Models;
 
+// Repository is just a fancy word where we put our database calls
+
 namespace Pokemon_Review_App.Repository
 {
     public class CountryRepository : ICountryRepository

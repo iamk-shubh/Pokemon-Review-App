@@ -11,6 +11,10 @@ namespace Pokemon_Review_App.Helper
             CreateMap<Pokemon, PokemonDto>();
             CreateMap<Category, CategoryDto>();
             CreateMap<Country, CountryDto>(); // after mapping go to CountryController again!!
+            CreateMap<Owner, OwnerDto>(); 
+            CreateMap<Review, ReviewDto>(); 
+            CreateMap<Reviewer, ReviewerDto>(); 
+           
 
             //CreateMap<CategoryDto, Category>();
             //CreateMap<CountryDto, Country>();

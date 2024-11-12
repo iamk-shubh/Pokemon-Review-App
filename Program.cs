@@ -5,6 +5,7 @@ using Pokemon_Review_App.Interfaces;
 using Pokemon_Review_App.Repository;
 using AutoMapper;
 using Pokemon_Review_App.Helper;
+using System.Text.Json.Serialization;
 
 internal class Program
 {
@@ -16,6 +17,8 @@ internal class Program
 
         builder.Services.AddControllers();
         builder.Services.AddTransient<Seed>();
+        builder.Services.AddControllers().AddJsonOptions(
+            x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 
 
@@ -34,8 +37,12 @@ internal class Program
         // wiring up of the repository  
         builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
         builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-        builder.Services.AddScoped<ICountryRepository, CountryRepository>(); 
+        builder.Services.AddScoped<ICountryRepository, CountryRepository>();
         // DONT Forget to WireUP   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        builder.Services.AddScoped<IOwnerRepository, OwnerRepository>();
+        builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+        builder.Services.AddScoped<IReviewerRepository, ReviewerRepository>();
+
 
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -11,10 +11,12 @@ namespace Pokemon_Review_App.Controllers
     [ApiController]
     public class CountryController : Controller
     {
+
+        // assign field
         private readonly ICountryRepository _countryRepository;
         private readonly IMapper _mapper;
 
-        // Created a constructor 
+        // Created a constructor - ctor
         public CountryController(ICountryRepository countryRepository, IMapper mapper)
         {
             _countryRepository = countryRepository;
@@ -25,7 +27,7 @@ namespace Pokemon_Review_App.Controllers
 
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Country>))]
-        public IActionResult GetPokemon()
+        public IActionResult GetCountries()
         {
             var countries = _mapper.Map<List<CountryDto>>(_countryRepository.GetCountries());
 

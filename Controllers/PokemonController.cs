@@ -17,8 +17,7 @@ namespace Pokemon_Review_App.Controllers
         private readonly IMapper _mapper; 
 
         public PokemonController(IPokemonRepository pokemonRepository, IMapper mapper) 
-        {
-            
+        { 
             _pokemonRepository = pokemonRepository;
             _mapper = mapper;
         }
@@ -27,7 +26,7 @@ namespace Pokemon_Review_App.Controllers
 
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Pokemon>))]
-        public IActionResult GetPokemon() 
+        public IActionResult GetPokemons() 
         {
             var pokemons = _mapper.Map<List<PokemonDto>>(_pokemonRepository.GetPokemons());
 
