@@ -7,6 +7,10 @@ using Pokemon_Review_App.Models;
 
 namespace Pokemon_Review_App.Repository
 {
+
+    // we will have to implement cntrl + . in ICountryRepo as many times we make changes in 
+    // in Interface 
+    
     public class CountryRepository : ICountryRepository
     {
         private readonly DataContext _context;
@@ -23,6 +27,19 @@ namespace Pokemon_Review_App.Repository
         public bool CountryExists(int id)
         {
             return _context.Countries.Any(c => c.Id == id);
+        }
+
+        // Post Req Api call 
+        public bool CreateCountry(Country country)
+        {
+            _context.Add(country);
+            return Save(); 
+        }
+
+        public bool DeleteCountry(Country country)
+        {
+            _context.Remove(country);
+            return Save();
         }
 
         public ICollection<Country> GetCountries()
@@ -44,6 +61,20 @@ namespace Pokemon_Review_App.Repository
         {
             // At the end we have used TO.List(); bcoz there could be more than one item
             return _context.Owners.Where(c => c.Country.Id == countryId).ToList();
+        }
+
+
+        // Post req api call 
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
+        }
+
+        public bool UpdateCountry(Country country)
+        {
+            _context.Update(country);
+            return Save();
         }
     }
 }

@@ -79,15 +79,11 @@ namespace Pokemon_Review_App.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CountryId");
 
-                    b.ToTable("owners");
+                    b.ToTable("Owners");
                 });
 
             modelBuilder.Entity("Pokemon_Review_App.Models.Pokemon", b =>
@@ -137,7 +133,7 @@ namespace Pokemon_Review_App.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("pokemonOwners");
+                    b.ToTable("PokemonOwners");
                 });
 
             modelBuilder.Entity("Pokemon_Review_App.Models.Review", b =>

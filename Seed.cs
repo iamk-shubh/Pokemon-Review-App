@@ -1,7 +1,6 @@
 ﻿using Pokemon_Review_App.Data;
 using Pokemon_Review_App.Models;
 
-
 namespace PokemonReviewApp
 {
     public class Seed
